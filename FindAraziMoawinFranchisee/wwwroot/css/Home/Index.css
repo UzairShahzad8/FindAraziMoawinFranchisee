@@ -1,0 +1,89 @@
+﻿.borderless-select {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    padding: 8px 30px 8px 10px;
+    width: 300px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14l-4.796-5.481A.5.5 0 0 1 2.5 5h11a.5.5 0 0 1 .38.84l-4.796 5.48a.5.5 0 0 1-.764 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+    .borderless-select:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+.search-bar {
+    background-color: white;
+    border-radius: 12px;
+    padding: 5px 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.franchisee-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+    .franchisee-card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.franchisee-name {
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.franchisee-address {
+    font-size: 14px;
+    color: #555;
+}
+
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 31.333333% !important;
+}
+
+.details-link {
+    text-decoration: underline;
+    cursor: pointer;
+    color: green;
+    font-weight: 500;
+}
+
+    .details-link:hover {
+        color: darkgreen;
+    }
+
+.pagination .page-link {
+    color: green;
+}
+
+    .pagination .page-link:hover {
+        color: white;
+        background-color: green;
+    }
+
+.pagination .page-item.active .page-link {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
