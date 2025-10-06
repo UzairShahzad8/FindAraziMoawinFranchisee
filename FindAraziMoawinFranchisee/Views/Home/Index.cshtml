@@ -5,37 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FindAraziMoawinFranchisee</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/Home/Index.css" />
 </head>
 <body style="background-image: url('/images/BG.jpg'); background-repeat:repeat; background-size:cover; margin-left: 40px; margin-right: 40px; margin-top: 10px; margin-bottom:10px;">
     <div class="row">
         <div class="col-md-6">
             <img src="/images/PLRA Logo 1.png" style="width:100px; height:90px" />
-            <h1 style="color:white; font-size:70px">Find Authorized Arazi Muawin in Your Tehsil.</h1>
-            <p style="color:white">Easily locate authorized Arazi Moawins in your area.<br />Select your tehsil to get instant guidance and on-the-spot support for your land-related services.</p>
+            <h1 style="color:white; font-size:52px">Find Authorized Arazi Muawin in Your Tehsil.</h1>
+            <p style="color:white; font-size:22px">Easily locate authorized Arazi Moawins in your area.<br />Select your tehsil to get instant guidance and on-the-spot support for your land-related services.</p>
         </div>
     </div>
 
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="search-bar">
-                <select id="districtDropdown" class="borderless-select">
-                    <option value="clear">Select District</option>
-                </select>
+                <div class="col-md-3">
+                    <select id="districtDropdown" class="borderless-select">
+                        <option value="clear">Select District</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select id="tehsilDropdown" class="borderless-select">
+                        <option value="clear">Select Tehsil</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <input id="nameSearchInput" type="text" class="form-control" placeholder="Search by Arazi Moawin Name" oninput="filterCardsByName()" />
+                </div>
 
-                <select id="tehsilDropdown" class="borderless-select">
-                    <option value="clear">Select Tehsil</option>
-                </select>
-
-                <input id="nameSearchInput" style="width: 350px;" type="text" class="form-control" placeholder="Search by Arazi Moawin Name" oninput="filterCardsByName()" />
-
-                <button class="btn btn-success" onclick="searchOffices()">Search</button>
+                @* <button class="btn btn-success" onclick="searchOffices()">Search</button> *@
             </div>
         </div>
     </div>
 
-    <div id="franchiseeCardsContainer" class="row mt-4" style="display: none;"></div>
+    <div id="franchiseeCardsContainer" class="row mt-4" style="display: none; font-family: 'Jameel Noori Nastaleeq'"></div>
     <div id="cardCountSummary" class="text-center mb-2" style="display: none; color:white"></div>
     <nav>
         <ul id="cardPagination" class="pagination justify-content-center mt-3"></ul>
@@ -53,7 +57,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/Home/Index.js"></script>
 </body>
 </html>

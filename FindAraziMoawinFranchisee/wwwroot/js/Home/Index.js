@@ -3,6 +3,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     loadDistricts();
 
+    searchOffices();
+
     document.getElementById("districtDropdown").addEventListener("change", function () {
         const districtId = this.value;
 
@@ -14,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        searchOffices();
         loadTehsils(districtId);
     });
 
@@ -21,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (this.value === "clear") {
             this.selectedIndex = 0;
         }
+        searchOffices();
     });
 });
 
@@ -35,6 +39,8 @@ function loadDistricts() {
             data.forEach(d => {
                 districtSelect.innerHTML += `<option value="${d.value}">${d.label}</option>`;
             });
+
+            
         });
 }
 
@@ -49,6 +55,7 @@ function loadTehsils(districtId) {
             data.forEach(t => {
                 tehsilSelect.innerHTML += `<option value="${t.value}">${t.label}</option>`;
             });
+
         });
 }
 

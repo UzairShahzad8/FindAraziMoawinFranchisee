@@ -25,7 +25,7 @@ namespace FindAraziMoawinFranchisee.Controllers
         [HttpGet]
         public async Task<IActionResult> GetDistricts()
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://fbe-dev.punjab-zameen.gov.pk/api/public/franchisee/districts");
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://fbe-prod.punjab-zameen.gov.pk:8080/api/public/franchisee/districts");
 
             var response = await _httpClient.SendAsync(request);
             if (!response.IsSuccessStatusCode) return BadRequest();
@@ -38,7 +38,7 @@ namespace FindAraziMoawinFranchisee.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTehsils(int districtId)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"https://fbe-dev.punjab-zameen.gov.pk/api/public/franchisee/tehsils?districtId={districtId}");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"https://fbe-prod.punjab-zameen.gov.pk:8080/api/public/franchisee/tehsils?districtId={districtId}");
 
             var response = await _httpClient.SendAsync(request);
             if (!response.IsSuccessStatusCode) return BadRequest();
@@ -51,8 +51,9 @@ namespace FindAraziMoawinFranchisee.Controllers
         [HttpGet]
         public async Task<IActionResult> GetFranchiseeOffices(int districtId, int tehsilId)
         {
-            var request = tehsilId == 0? new HttpRequestMessage(HttpMethod.Get, $"https://fbe-dev.punjab-zameen.gov.pk/api/public/franchisee/offices?districtId={districtId}"):
-                                         new HttpRequestMessage(HttpMethod.Get, $"https://fbe-dev.punjab-zameen.gov.pk/api/public/franchisee/offices?districtId={districtId}&tehsilId={tehsilId}");
+            var request = districtId == 0? new HttpRequestMessage(HttpMethod.Get, $"https://fbe-prod.punjab-zameen.gov.pk:8080/api/public/franchisee/offices") : 
+                          tehsilId == 0?   new HttpRequestMessage(HttpMethod.Get, $"https://fbe-prod.punjab-zameen.gov.pk:8080/api/public/franchisee/offices?districtId={districtId}"):
+                                           new HttpRequestMessage(HttpMethod.Get, $"https://fbe-prod.punjab-zameen.gov.pk:8080/api/public/franchisee/offices?districtId={districtId}&tehsilId={tehsilId}");
 
             var response = await _httpClient.SendAsync(request);
             if (!response.IsSuccessStatusCode) return BadRequest();
